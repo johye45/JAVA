@@ -1,0 +1,58 @@
+  /*트레이너 카테고리*/
+CREATE TABLE gym_manager(
+   order_id NUMBER
+   , manager_name varchar(25)
+   , manager_age NUMBER(20) 
+   , manager_phone VARCHAR(20) 
+   , manager_mail VARCHAR(100) 
+   , manager_addr VARCHAR(100)
+   , manager_file VARCHAR(1000)
+   , manager_gender varchar(20)
+   , PRIMARY key(order_id)   
+);
+
+CREATE SEQUENCE seq_gym_manager
+INCREMENT BY 1
+START WITH 1;
+
+
+/*헬스 프로그램 */
+CREATE TABLE gym_program(
+   pg_id NUMBER
+   , order_id number
+   , pg_name varchar(30)
+   , pg_day varchar(30)
+   , pg_start_day varchar(30)
+   , pg_end_day varchar(30)
+   , pg_price number
+   , pg_total number
+   , pg_file VARCHAR(1000)
+   , PRIMARY key(pg_id)
+   , CONSTRAINT fk_gym_program FOREIGN KEY (order_id) 
+      REFERENCES gym_manager(order_id)
+);
+CREATE SEQUENCE sep_gym_program
+INCREMENT BY 1
+START WITH 1;
+
+/*멤버 프로그램*/
+CREATE TABLE gym_member(
+   member_id NUMBER
+    ,m_key number
+    ,m_locker number
+   , m_name varchar(25)
+   , m_age NUMBER(20) 
+   , m_gender varchar(20)
+   , m_phone VARCHAR(20) 
+   , m_mail VARCHAR(100) 
+   , m_addr VARCHAR(100)
+   , regdate varchar(20) 
+   , m_expdate varchar(20)
+   , m_file VARCHAR(1000)
+   );
+CREATE SEQUENCE seq_gym_member
+INCREMENT BY 1
+START WITH 1;
+
+
+

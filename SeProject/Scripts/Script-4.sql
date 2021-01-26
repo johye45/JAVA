@@ -1,0 +1,2 @@
+iNSERT INTO gym_manager(order_id,manager_name,manager_age,manager_phone,manager_mail,
+manager_addr,manager_file) values(seq_gym_manager.nextval,'name',40,'01012345678','gym@Gmail.com','seoul ','D:/workspace/java/SeProject/res/travel2/aa.jpg');
